@@ -1,6 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Trophy, Zap, Bot } from "lucide-react";
+import { Trophy, Zap, Bot, Shield, Users } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 
 const HeroSection = () => {
@@ -10,7 +11,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
-          alt="Agent Fit Saga Hero" 
+          alt="CycleSafe Pro Hero" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
@@ -36,41 +37,41 @@ const HeroSection = () => {
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent leading-tight">
-          Agent Fit Saga
+          CycleSafe Pro
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
-          The Future of Fitness is Here
+          The Ultimate Cycling Safety & Performance Platform
         </p>
         
         <p className="text-lg text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-          Revolutionary Web3 fitness platform powered by AI agents. Track your progress, 
-          earn NFT achievements, and get personalized coaching that adapts to your unique journey.
+          Connect with Strava, track performance, request emergency rescue, access crowdfunded insurance, 
+          and support your favorite pro cyclists - all powered by AI agents and blockchain technology.
         </p>
 
         {/* Feature Highlights */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <Badge variant="outline" className="px-4 py-2 bg-primary/10 border-primary text-primary">
             <Bot className="w-4 h-4 mr-2" />
-            6 AI Agents
+            AI Safety Agents
           </Badge>
           <Badge variant="outline" className="px-4 py-2 bg-secondary/10 border-secondary text-secondary">
-            <Zap className="w-4 h-4 mr-2" />
-            Blockchain Verified
+            <Shield className="w-4 h-4 mr-2" />
+            Emergency Rescue
           </Badge>
           <Badge variant="outline" className="px-4 py-2 bg-accent/10 border-accent text-accent">
-            <Trophy className="w-4 h-4 mr-2" />
-            NFT Achievements
+            <Users className="w-4 h-4 mr-2" />
+            Pro Cyclist Support
           </Badge>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button variant="hero" size="xl" className="min-w-48">
-            Start Your Journey
+            Connect Strava
           </Button>
           <Button variant="agent" size="xl" className="min-w-48">
-            View Demo
+            View Safety Features
           </Button>
         </div>
 
@@ -79,9 +80,9 @@ const HeroSection = () => {
           <p className="text-sm text-muted-foreground mb-6">Powered by cutting-edge technology</p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             <span className="text-sm font-semibold">Strava</span>
+            <span className="text-sm font-semibold">Emergency Services</span>
             <span className="text-sm font-semibold">The Graph</span>
-            <span className="text-sm font-semibold">Nillion</span>
-            <span className="text-sm font-semibold">Base</span>
+            <span className="text-sm font-semibold">Base Network</span>
             <span className="text-sm font-semibold">SpoonOS</span>
           </div>
         </div>

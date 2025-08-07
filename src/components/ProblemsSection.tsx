@@ -1,38 +1,39 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { AlertTriangle, Users, Brain, Database, TrendingUp } from "lucide-react";
+import { AlertTriangle, Users, Shield, TrendingDown, MapPin } from "lucide-react";
 
 const problems = [
   {
-    title: "Fragmented Fitness Data",
-    description: "Users juggle multiple Web2 platforms (Strava, Fitbit, MyFitnessPal), leading to siloed activity, nutrition, and health records.",
-    impact: "Reduces insights and makes goal tracking cumbersome",
+    title: "Cycling Safety Crisis",
+    description: "Cyclists face increasing risks on roads with limited emergency response options and no reliable way to call for help during accidents or mechanical failures.",
+    impact: "Higher injury rates and delayed emergency response",
     severity: "High",
-    icon: Database,
+    icon: Shield,
     color: "destructive"
   },
   {
-    title: "Lack of Personalized Guidance",
-    description: "Current apps offer generic plans. Users with varying goals need dynamic, AI‑tailored coaching.",
-    impact: "One-size-fits-all approach fails individual needs",
+    title: "Fragmented Performance Data",
+    description: "Cyclists use multiple platforms (Strava, Garmin, Wahoo) but lack unified insights and community connection around their performance data.",
+    impact: "Limited performance optimization and community engagement",
     severity: "High",
-    icon: Brain,
+    icon: TrendingDown,
     color: "destructive"
   },
   {
-    title: "Community Engagement Gaps",
-    description: "Fitness communities exist, but moderation and motivation are manual, leading to drop‑off and low accountability.",
-    impact: "High user churn and reduced motivation",
+    title: "Expensive Cycling Insurance",
+    description: "Traditional cycling insurance is costly and doesn't leverage community support or modern risk-sharing models.",
+    impact: "Many cyclists ride uninsured or underinsured",
     severity: "Medium",
     icon: Users,
     color: "secondary"
   },
   {
-    title: "Ownership & Motivation Issues",
-    description: "Users invest time but don't 'own' their progress—no transferable proof of achievement or incentives beyond badges.",
-    impact: "Limited long-term engagement",
+    title: "Disconnected Pro Support",
+    description: "Amateur cyclists want to support professional cyclists but lack direct connection and meaningful ways to contribute to their careers.",
+    impact: "Missed opportunities for fan engagement and pro cyclist funding",
     severity: "Medium",
-    icon: TrendingUp,
+    icon: MapPin,
     color: "accent"
   }
 ];
@@ -72,12 +73,12 @@ const ProblemsSection = () => {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            The Problem We're <span className="text-destructive">Solving</span>
+            Cycling Challenges We're <span className="text-destructive">Solving</span>
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The fitness industry is fragmented and lacks personalization. 
-            We identified critical pain points that affect millions of fitness enthusiasts.
+            The cycling community faces critical safety, performance, and engagement challenges. 
+            We identified key pain points that affect millions of cyclists worldwide.
           </p>
         </div>
 
@@ -123,19 +124,19 @@ const ProblemsSection = () => {
 
         {/* Affected Parties */}
         <div className="text-center">
-          <h3 className="text-2xl font-semibold mb-8">Who's Affected?</h3>
+          <h3 className="text-2xl font-semibold mb-8">Who Benefits?</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <Badge variant="outline" className="px-6 py-3 text-lg bg-card">
-              🏃‍♂️ Fitness Enthusiasts
+              🚴‍♂️ Recreational Cyclists
             </Badge>
             <Badge variant="outline" className="px-6 py-3 text-lg bg-card">
-              🏆 Amateur & Pro Athletes
+              🏆 Competitive Cyclists
             </Badge>
             <Badge variant="outline" className="px-6 py-3 text-lg bg-card">
-              👥 Community Organizers
+              👥 Cycling Communities
             </Badge>
             <Badge variant="outline" className="px-6 py-3 text-lg bg-card">
-              🏥 Rehabilitation Centers
+              🚴‍♀️ Professional Cyclists
             </Badge>
           </div>
         </div>

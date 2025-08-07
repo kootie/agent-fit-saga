@@ -1,55 +1,56 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Zap, Shield, Coins, Users, BarChart3, Smartphone } from "lucide-react";
+import { CheckCircle, Zap, Shield, Coins, Users, BarChart3, Phone } from "lucide-react";
 import nftBadgeIcon from "@/assets/nft-badge-icon.jpg";
 
 const solutions = [
   {
-    title: "Unified Data Platform",
-    description: "Seamlessly integrate all your fitness data from multiple platforms into one comprehensive dashboard.",
-    benefits: ["Strava integration", "Cross-platform sync", "Unified analytics"],
-    icon: BarChart3,
+    title: "Emergency Rescue System",
+    description: "AI-powered emergency detection with instant rescue request capability and real-time location sharing.",
+    benefits: ["Automatic crash detection", "Emergency contact alerts", "GPS location sharing"],
+    icon: Phone,
     color: "primary"
   },
   {
-    title: "AI-Powered Personalization",
-    description: "Dynamic coaching that adapts to your goals, injury history, and progress in real-time.",
-    benefits: ["Context-aware coaching", "Injury prevention", "Goal optimization"],
-    icon: Zap,
+    title: "Strava-Powered Analytics",
+    description: "Deep integration with Strava for comprehensive performance tracking and community insights.",
+    benefits: ["Unified performance data", "Social challenges", "Route optimization"],
+    icon: BarChart3,
     color: "secondary"
   },
   {
-    title: "Automated Community Management",
-    description: "AI agents moderate communities and boost engagement without manual oversight.",
-    benefits: ["Smart moderation", "Engagement insights", "24/7 support"],
-    icon: Users,
+    title: "Crowdfunded Insurance",
+    description: "Community-driven insurance pools that reduce costs through collective risk sharing and blockchain transparency.",
+    benefits: ["Lower premiums", "Community support", "Transparent claims"],
+    icon: Shield,
     color: "accent"
   },
   {
-    title: "Blockchain-Verified Achievements",
-    description: "Earn transferable NFT achievements that prove your fitness milestones on-chain.",
-    benefits: ["Ownership proof", "Transferable assets", "Immutable records"],
-    icon: Shield,
+    title: "Pro Cyclist Support",
+    description: "Connect amateur cyclists with professional athletes through direct sponsorship and support mechanisms.",
+    benefits: ["Fan engagement", "Direct funding", "Exclusive content"],
+    icon: Users,
     color: "primary"
   }
 ];
 
 const businessModels = [
   {
-    model: "Freemium & Subscription",
-    description: "Basic tracking free; Premium AI agents for advanced coaching",
-    icon: Smartphone
+    model: "Subscription Tiers",
+    description: "Basic safety features free; Premium rescue and analytics",
+    icon: Zap
   },
   {
-    model: "NFT-Based Achievements",
-    description: "One-time mint fees and secondary market royalties",
+    model: "Insurance Commission",
+    description: "Percentage of crowdfunded insurance pool premiums",
+    icon: Shield
+  },
+  {
+    model: "Pro Support Platform",
+    description: "Transaction fees on fan-to-pro cyclist funding",
     icon: Coins
-  },
-  {
-    model: "Data Insights API",
-    description: "Aggregated analytics for sports brands and insurers",
-    icon: BarChart3
   }
 ];
 
@@ -77,12 +78,12 @@ const SolutionSection = () => {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="bg-gradient-hero bg-clip-text text-transparent">Solution</span>
+            Our <span className="bg-gradient-hero bg-clip-text text-transparent">Cycling Solution</span>
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Agent Fit Saga addresses every pain point with cutting-edge Web3 technology, 
-            AI agents, and blockchain-verified achievements.
+            CycleSafe Pro addresses every cycling challenge with cutting-edge safety technology, 
+            performance analytics, community insurance, and professional athlete support.
           </p>
         </div>
 
@@ -124,27 +125,23 @@ const SolutionSection = () => {
           })}
         </div>
 
-        {/* NFT Achievement Showcase */}
+        {/* Safety Showcase */}
         <div className="mb-20">
           <Card className="max-w-4xl mx-auto bg-gradient-accent border-accent/20">
             <CardHeader className="text-center">
               <div className="flex justify-center mb-4">
-                <img 
-                  src={nftBadgeIcon} 
-                  alt="NFT Achievement Badge" 
-                  className="w-20 h-20 rounded-full object-cover animate-pulse-glow"
-                />
+                <Phone className="w-20 h-20 text-accent animate-pulse" />
               </div>
               <CardTitle className="text-2xl font-semibold text-accent-foreground">
-                Revolutionary NFT Achievement System
+                Revolutionary Emergency Response System
               </CardTitle>
               <CardDescription className="text-lg text-accent-foreground/80">
-                First-of-its-kind blockchain-verified fitness achievements that you truly own
+                First-of-its-kind AI-powered cycling safety platform with instant rescue capabilities
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
               <Button variant="nft" size="lg">
-                Explore NFT Achievements
+                Test Emergency System
               </Button>
             </CardContent>
           </Card>

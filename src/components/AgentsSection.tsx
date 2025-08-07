@@ -1,55 +1,56 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Target, Calendar, Shield, Apple, Users, Trophy, Bot, Sparkles } from "lucide-react";
+import { Phone, Calendar, Shield, Users, Trophy, Bot, Sparkles, BarChart3 } from "lucide-react";
 import aiAgentIcon from "@/assets/ai-agent-icon.jpg";
 
 const agents = [
   {
-    id: "goal-setting",
-    name: "Goal-Setting Agent",
-    description: "AI-powered goal creation and milestone tracking tailored to your fitness level and objectives.",
-    icon: Target,
-    features: ["Smart goal recommendations", "Progress tracking", "Adaptive milestones"],
+    id: "emergency-response",
+    name: "Emergency Response Agent",
+    description: "AI-powered crash detection and emergency coordination with real-time location sharing and rescue dispatch.",
+    icon: Phone,
+    features: ["Crash detection", "Emergency dispatch", "Medical alert system"],
     color: "primary"
   },
   {
-    id: "daily-checkin",
-    name: "Daily Check-In Agent",
-    description: "Your personal fitness companion that tracks daily activities and provides motivation.",
-    icon: Calendar,
-    features: ["Daily habit tracking", "Motivation messages", "Progress insights"],
+    id: "performance-tracking",
+    name: "Performance Tracking Agent",
+    description: "Advanced Strava integration with personalized coaching insights and route optimization for cyclists.",
+    icon: BarChart3,
+    features: ["Strava sync", "Performance analytics", "Route recommendations"],
     color: "secondary"
   },
   {
-    id: "injury-management",
-    name: "Injury Management Agent",
-    description: "Context-aware coaching that adapts to your injury history and recovery needs.",
+    id: "safety-monitoring",
+    name: "Safety Monitoring Agent",
+    description: "Continuous safety assessment using weather data, traffic conditions, and bike maintenance alerts.",
     icon: Shield,
-    features: ["Injury-aware workouts", "Recovery guidance", "Safety monitoring"],
+    features: ["Weather alerts", "Traffic monitoring", "Maintenance reminders"],
     color: "accent"
   },
   {
-    id: "nutrition",
-    name: "Nutrition Agent",
-    description: "Personalized nutrition coaching that aligns with your fitness goals and dietary preferences.",
-    icon: Apple,
-    features: ["Meal planning", "Nutrition tracking", "Goal-aligned recommendations"],
+    id: "community-matching",
+    name: "Community Matching Agent",
+    description: "Connect cyclists with similar routes, skills, and interests while managing group rides and challenges.",
+    icon: Users,
+    features: ["Rider matching", "Group coordination", "Challenge management"],
     color: "primary"
   },
   {
-    id: "community",
-    name: "Community Moderation Agent",
-    description: "Automated community management that fosters engagement and maintains positive interactions.",
-    icon: Users,
-    features: ["Smart moderation", "Engagement boosting", "Community insights"],
+    id: "insurance-coordinator",
+    name: "Insurance Coordinator Agent",
+    description: "Automated claims processing and risk assessment for crowdfunded cycling insurance pools.",
+    icon: Trophy,
+    features: ["Claims automation", "Risk assessment", "Pool management"],
     color: "secondary"
   },
   {
-    id: "nft-minting",
-    name: "NFT Minting Agent",
-    description: "Automatically mints achievement NFTs when you reach significant fitness milestones.",
-    icon: Trophy,
-    features: ["Milestone detection", "Automatic minting", "Achievement verification"],
+    id: "pro-support",
+    name: "Pro Support Agent",
+    description: "Facilitate connections between amateur cyclists and professional athletes through sponsorship and fan engagement.",
+    icon: Bot,
+    features: ["Fan matching", "Sponsorship tracking", "Content delivery"],
     color: "accent"
   }
 ];
@@ -87,12 +88,12 @@ const AgentsSection = () => {
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Meet Your <span className="bg-gradient-hero bg-clip-text text-transparent">AI Agents</span>
+            Meet Your <span className="bg-gradient-hero bg-clip-text text-transparent">Cycling AI Agents</span>
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Six specialized AI agents working together to revolutionize your fitness journey. 
-            Each agent brings unique capabilities powered by advanced machine learning.
+            Six specialized AI agents working together to revolutionize your cycling experience. 
+            From emergency response to performance optimization and community building.
           </p>
         </div>
 
@@ -146,12 +147,12 @@ const AgentsSection = () => {
               </CardTitle>
               <CardDescription className="text-lg">
                 We're migrating from our custom orchestration to SpoonOS's native agent framework 
-                for enhanced lifecycle management, observability, and scalability.
+                for enhanced lifecycle management, observability, and scalability in cycling safety.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <Button variant="agent" size="lg">
-                Learn About Our Tech Stack
+                Learn About Our Safety Tech
               </Button>
             </CardContent>
           </Card>
