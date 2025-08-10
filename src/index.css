@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Agent Fit Saga Design System - Fitness & AI focused */
+/* Klunkaz Design System - Modern & Innovative */
 
 @layer base {
   :root {
@@ -16,17 +16,17 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    /* Primary - Electric Green for fitness energy */
-    --primary: 142 76% 36%;
+    /* Primary - Modern Orange/Red for energy and innovation */
+    --primary: 14 100% 57%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 142 86% 50%;
+    --primary-glow: 14 100% 67%;
 
-    /* Secondary - Cool Blue for tech/AI */
-    --secondary: 217 91% 60%;
+    /* Secondary - Deep Blue for trust and technology */
+    --secondary: 221 83% 53%;
     --secondary-foreground: 0 0% 98%;
 
-    /* Accent - Vibrant Purple for achievements/NFTs */
-    --accent: 270 95% 75%;
+    /* Accent - Vibrant Teal for modern appeal */
+    --accent: 180 100% 50%;
     --accent-foreground: 0 0% 98%;
 
     --muted: 240 5% 15%;

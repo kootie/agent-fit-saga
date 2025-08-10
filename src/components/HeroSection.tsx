@@ -11,7 +11,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
-          alt="CycleSafe Pro Hero" 
+          alt="Klunkaz Hero" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
@@ -27,51 +27,52 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
-        {/* Award Badge */}
+        {/* Logo */}
         <div className="mb-8 flex justify-center">
-          <Badge variant="secondary" className="px-6 py-2 text-lg bg-secondary/20 border border-secondary backdrop-blur-sm">
-            <Trophy className="w-5 h-5 mr-2" />
-            🏆 ETHGlobal Agentic Ethereum 2025 Winner
-          </Badge>
+          <img 
+            src="/logo.png" 
+            alt="Klunkaz Logo" 
+            className="h-16 w-auto"
+          />
         </div>
 
         {/* Main Heading */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent leading-tight">
-          CycleSafe Pro
+          Klunkaz
         </h1>
         
         <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto">
-          The Ultimate Cycling Safety & Performance Platform
+          Your Ultimate Digital Platform
         </p>
         
         <p className="text-lg text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-          Connect with Strava, track performance, request emergency rescue, access crowdfunded insurance, 
-          and support your favorite pro cyclists - all powered by AI agents and blockchain technology.
+          Experience the next generation of digital innovation with cutting-edge technology, 
+          seamless user experience, and powerful features designed for the modern world.
         </p>
 
         {/* Feature Highlights */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           <Badge variant="outline" className="px-4 py-2 bg-primary/10 border-primary text-primary">
             <Bot className="w-4 h-4 mr-2" />
-            AI Safety Agents
+            AI Powered
           </Badge>
           <Badge variant="outline" className="px-4 py-2 bg-secondary/10 border-secondary text-secondary">
             <Shield className="w-4 h-4 mr-2" />
-            Emergency Rescue
+            Secure & Reliable
           </Badge>
           <Badge variant="outline" className="px-4 py-2 bg-accent/10 border-accent text-accent">
             <Users className="w-4 h-4 mr-2" />
-            Pro Cyclist Support
+            Community Driven
           </Badge>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button variant="hero" size="xl" className="min-w-48">
-            Connect Strava
+          <Button variant="hero" size="xl" className="min-w-48" asChild>
+            <a href="/demo">Try Demo</a>
           </Button>
           <Button variant="agent" size="xl" className="min-w-48">
-            View Safety Features
+            Learn More
           </Button>
         </div>
 
@@ -79,11 +80,11 @@ const HeroSection = () => {
         <div className="mt-16 text-center">
           <p className="text-sm text-muted-foreground mb-6">Powered by cutting-edge technology</p>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            <span className="text-sm font-semibold">Strava</span>
-            <span className="text-sm font-semibold">Emergency Services</span>
-            <span className="text-sm font-semibold">The Graph</span>
-            <span className="text-sm font-semibold">Base Network</span>
-            <span className="text-sm font-semibold">SpoonOS</span>
+            <span className="text-sm font-semibold">Cloud Infrastructure</span>
+            <span className="text-sm font-semibold">AI & Machine Learning</span>
+            <span className="text-sm font-semibold">Blockchain</span>
+            <span className="text-sm font-semibold">Modern APIs</span>
+            <span className="text-sm font-semibold">Security First</span>
           </div>
         </div>
       </div>

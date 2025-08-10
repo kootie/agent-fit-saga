@@ -11,25 +11,28 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
-              Agent Fit Saga
-            </h3>
+            <div className="flex items-center gap-3">
+              <img 
+                src="/logo.png" 
+                alt="Klunkaz Logo" 
+                className="h-8 w-auto"
+              />
+              <h3 className="text-2xl font-bold bg-gradient-hero bg-clip-text text-transparent">
+                Klunkaz
+              </h3>
+            </div>
             <p className="text-muted-foreground leading-relaxed">
-              Revolutionary Web3 fitness platform powered by AI agents and blockchain technology.
+              Your ultimate digital platform powered by cutting-edge technology and innovative design.
             </p>
-            <Badge variant="secondary" className="w-fit">
-              <Trophy className="w-4 h-4 mr-2" />
-              ETHGlobal Winner
-            </Badge>
           </div>
 
           {/* Product Links */}
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Product</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">AI Agents</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">NFT Achievements</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Strava Integration</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Features</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Pricing</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">Integrations</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Community</a></li>
             </ul>
           </div>
@@ -38,10 +41,10 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Technology</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-secondary transition-colors">SpoonOS</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Base Blockchain</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">The Graph</a></li>
-              <li><a href="#" className="hover:text-secondary transition-colors">Nillion</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Platform</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Security</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Performance</a></li>
+              <li><a href="#" className="hover:text-secondary transition-colors">Innovation</a></li>
             </ul>
           </div>
 
@@ -78,7 +81,7 @@ const Footer = () => {
           <div className="flex items-center gap-2 text-muted-foreground text-sm">
             <span>Built with</span>
             <Heart className="w-4 h-4 text-destructive" />
-            <span>for the fitness community</span>
+            <span>for the digital community</span>
           </div>
 
           {/* CTA */}
@@ -90,7 +93,7 @@ const Footer = () => {
         {/* Legal Notice */}
         <div className="mt-8 pt-8 border-t border-border/50 text-center">
           <p className="text-xs text-muted-foreground">
-            © 2025 Agent Fit Saga. All rights reserved. | Privacy Policy | Terms of Service
+            © 2025 Klunkaz. All rights reserved. | Privacy Policy | Terms of Service
           </p>
         </div>
       </div>

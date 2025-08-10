@@ -82,7 +82,7 @@ const SolutionSection = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            CycleSafe Pro addresses every cycling challenge with cutting-edge safety technology, 
+            Klunkaz addresses every digital challenge with cutting-edge technology, 
             performance analytics, community insurance, and professional athlete support.
           </p>
         </div>
