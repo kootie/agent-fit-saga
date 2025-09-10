@@ -61,16 +61,54 @@ class ApiService {
     });
   }
 
-  // Krnl endpoints
-  async executeKrnlAction(data: { walletAddress: string; actionType: string; payload?: any }) {
-    return this.request('/krnl/execute', {
+  // Blockchain endpoints
+  async getNetworkInfo() {
+    return this.request('/blockchain/network');
+  }
+
+  async getAddressInfo(address: string) {
+    return this.request(`/blockchain/address/${address}`);
+  }
+
+  async getTransactionInfo(txHash: string) {
+    return this.request(`/blockchain/transaction/${txHash}`);
+  }
+
+  async recordBlockchainOperation(data: { walletAddress: string; operationType: string; txHash?: string; contractAddress?: string }) {
+    return this.request('/blockchain/operation', {
       method: 'POST',
       body: JSON.stringify(data),
     });
   }
 
-  async getKrnlInteractions(walletAddress: string) {
-    return this.request(`/krnl/interactions/${walletAddress}`);
+  async getBlockchainOperations(walletAddress: string) {
+    return this.request(`/blockchain/operations/${walletAddress}`);
+  }
+
+  // Blockchain endpoints
+  async queryBlockchainData(address: string) {
+    return this.request(`/blockchain/query/${address}`);
+  }
+
+  async getContractInfo(address: string) {
+    return this.request(`/blockchain/contract/${address}`);
+  }
+
+  async recordBlockchainOperation(data: { 
+    walletAddress: string; 
+    operationType: string; 
+    txHash?: string; 
+    contractAddress?: string; 
+    gasUsed?: string; 
+  }) {
+    return this.request('/blockchain/operation', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    });
+  }
+
+  async getBlockchainOperations(walletAddress: string) {
+    return this.request(`/blockchain/operations/${walletAddress}`);
   }
 
   // Health check

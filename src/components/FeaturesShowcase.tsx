@@ -23,8 +23,8 @@ const FeaturesShowcase = () => {
     },
     {
       icon: Terminal,
-      title: 'Krnl Powered',
-      description: 'Advanced blockchain operations using Krnl infrastructure',
+      title: 'Direct Blockchain',
+      description: 'Direct blockchain operations using Ethers.js and Base network',
       badge: 'Infrastructure',
       color: 'bg-secondary/10 text-secondary border-secondary'
     },
@@ -63,8 +63,8 @@ const FeaturesShowcase = () => {
     { name: 'Node.js + Express', category: 'Backend' },
     { name: 'SQLite', category: 'Database' },
     { name: 'Base Network', category: 'Blockchain' },
-    { name: 'Krnl', category: 'Infrastructure' },
-    { name: 'Ethers.js', category: 'Web3' }
+    { name: 'Ethers.js', category: 'Web3' },
+    { name: 'MetaMask', category: 'Wallet' }
   ];
 
   return (

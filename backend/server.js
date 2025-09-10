@@ -9,7 +9,7 @@ import { dirname, join } from 'path';
 // Import routes
 import userRoutes from './routes/users.js';
 import walletRoutes from './routes/wallet.js';
-import krnlRoutes from './routes/krnl.js';
+import blockchainRoutes from './routes/blockchain.js';
 
 dotenv.config();
 
@@ -51,7 +51,7 @@ app.get('/health', (req, res) => {
 // API routes
 app.use('/api/users', userRoutes);
 app.use('/api/wallet', walletRoutes);
-app.use('/api/krnl', krnlRoutes);
+app.use('/api/blockchain', blockchainRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

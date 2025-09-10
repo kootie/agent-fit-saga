@@ -53,15 +53,16 @@ export const initDatabase = () => {
         )
       `);
 
-      // Krnl interactions table
+      // Blockchain operations table
       db.run(`
-        CREATE TABLE IF NOT EXISTS krnl_interactions (
+        CREATE TABLE IF NOT EXISTS blockchain_operations (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
           user_id INTEGER,
-          action_type TEXT NOT NULL,
-          payload TEXT,
-          response TEXT,
+          operation_type TEXT NOT NULL,
+          tx_hash TEXT,
+          contract_address TEXT,
           status TEXT DEFAULT 'pending',
+          gas_used TEXT,
           created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
           FOREIGN KEY (user_id) REFERENCES users (id)
         )

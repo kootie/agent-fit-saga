@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import WalletConnect from '@/components/WalletConnect';
-import KrnlDemo from '@/components/KrnlDemo';
+import BlockchainDemo from '@/components/BlockchainDemo';
 import FeaturesShowcase from '@/components/FeaturesShowcase';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -11,7 +11,7 @@ import { apiService } from '@/services/api';
 const Demo = () => {
   const [walletAddress, setWalletAddress] = useState<string | null>(null);
   const [transactions, setTransactions] = useState<any[]>([]);
-  const [krnlInteractions, setKrnlInteractions] = useState<any[]>([]);
+  const [blockchainOperations, setBlockchainOperations] = useState<any[]>([]);
 
   useEffect(() => {
     checkWalletConnection();
@@ -40,13 +40,13 @@ const Demo = () => {
     if (!walletAddress) return;
 
     try {
-      const [txData, krnlData] = await Promise.all([
+      const [txData, blockchainData] = await Promise.all([
         apiService.getUserTransactions(walletAddress),
-        apiService.getKrnlInteractions(walletAddress)
+        apiService.getBlockchainOperations(walletAddress)
       ]);
       
       setTransactions(txData);
-      setKrnlInteractions(krnlData);
+      setBlockchainOperations(blockchainData);
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
@@ -73,7 +73,7 @@ const Demo = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Badge variant="outline" className="px-4 py-2 bg-primary/10 border-primary text-primary">
               <Zap className="w-4 h-4 mr-2" />
-              Krnl Powered
+              Blockchain Direct
             </Badge>
             <Badge variant="outline" className="px-4 py-2 bg-secondary/10 border-secondary text-secondary">
               <Database className="w-4 h-4 mr-2" />
@@ -93,7 +93,7 @@ const Demo = () => {
           <Tabs defaultValue="wallet" className="w-full">
             <TabsList className="grid w-full grid-cols-4">
               <TabsTrigger value="wallet">Wallet</TabsTrigger>
-              <TabsTrigger value="krnl">Krnl Demo</TabsTrigger>
+              <TabsTrigger value="blockchain">Blockchain</TabsTrigger>
               <TabsTrigger value="data">User Data</TabsTrigger>
               <TabsTrigger value="features">Features</TabsTrigger>
             </TabsList>
@@ -104,9 +104,9 @@ const Demo = () => {
               </div>
             </TabsContent>
 
-            <TabsContent value="krnl" className="mt-8">
+            <TabsContent value="blockchain" className="mt-8">
               <div className="flex justify-center">
-                <KrnlDemo walletAddress={walletAddress} />
+                <BlockchainDemo walletAddress={walletAddress} />
               </div>
             </TabsContent>
 
@@ -148,37 +148,37 @@ const Demo = () => {
                   </CardContent>
                 </Card>
 
-                {/* Krnl Interactions */}
+                {/* Blockchain Operations */}
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Zap className="w-5 h-5" />
-                      Krnl Interactions
+                      Blockchain Operations
                     </CardTitle>
                     <CardDescription>
-                      Your Krnl action history
+                      Your blockchain operation history
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    {krnlInteractions.length > 0 ? (
+                    {blockchainOperations.length > 0 ? (
                       <div className="space-y-3">
-                        {krnlInteractions.slice(0, 5).map((interaction, index) => (
+                        {blockchainOperations.slice(0, 5).map((operation, index) => (
                           <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
                             <div>
-                              <p className="font-medium text-sm">{interaction.action_type}</p>
+                              <p className="font-medium text-sm">{operation.operation_type}</p>
                               <p className="text-xs text-muted-foreground">
-                                {new Date(interaction.created_at).toLocaleDateString()}
+                                {new Date(operation.created_at).toLocaleDateString()}
                               </p>
                             </div>
-                            <Badge variant={interaction.status === 'completed' ? 'default' : 'secondary'}>
-                              {interaction.status}
+                            <Badge variant={operation.status === 'completed' ? 'default' : 'secondary'}>
+                              {operation.status}
                             </Badge>
                           </div>
                         ))}
                       </div>
                     ) : (
                       <p className="text-muted-foreground text-center py-8">
-                        No Krnl interactions yet
+                        No blockchain operations yet
                       </p>
                     )}
                   </CardContent>

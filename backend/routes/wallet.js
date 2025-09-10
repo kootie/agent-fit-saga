@@ -1,4 +1,5 @@
 import express from 'express';
+import { param, body, validationResult } from 'express-validator';
 import { ethers } from 'ethers';
 import db from '../database/db.js';
 
@@ -7,27 +8,66 @@ const router = express.Router();
 // Initialize Base provider
 const provider = new ethers.JsonRpcProvider(process.env.BASE_RPC_URL);
 
-// Get wallet balance
-router.get('/:address/balance', async (req, res) => {
-  try {
-    const { address } = req.params;
-    
-    if (!ethers.isAddress(address)) {
-      return res.status(400).json({ error: 'Invalid wallet address' });
+// Get wallet balance (Following both steering rules)
+router.get('/:address/balance', [
+  param('address').custom(value => {
+    if (!ethers.isAddress(value)) {
+      throw new Error('Invalid wallet address format');
     }
-
-    const balance = await provider.getBalance(address);
-    const balanceInEth = ethers.formatEther(balance);
-    
-    res.json({
-      address,
-      balance: balanceInEth,
-      balanceWei: balance.toString(),
-      network: 'Base'
+    return true;
+  })
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      error: 'Invalid wallet address',
+      code: 'INVALID_ADDRESS',
+      details: errors.array(),
+      timestamp: new Date().toISOString()
     });
-  } catch (error) {
-    console.error('Error fetching balance:', error);
-    res.status(500).json({ error: 'Failed to fetch balance' });
+  }
+
+  const { address } = req.params;
+  const MAX_RETRIES = 3;
+  
+  // Blockchain Standards: Implement retry logic for failed blockchain calls
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const balance = await provider.getBalance(address);
+      const balanceInEth = ethers.formatEther(balance);
+      
+      // API Standards: Consistent response format with metadata
+      return res.json({
+        data: {
+          address,
+          balance: balanceInEth,
+          balanceWei: balance.toString(),
+          network: 'Base'
+        },
+        metadata: {
+          attempt,
+          timestamp: new Date().toISOString()
+        }
+      });
+    } catch (error) {
+      console.error(`Balance fetch attempt ${attempt} failed:`, error);
+      
+      if (attempt === MAX_RETRIES) {
+        return res.status(500).json({
+          error: 'Failed to fetch balance after retries',
+          code: 'BALANCE_FETCH_ERROR',
+          details: { 
+            address, 
+            attempts: MAX_RETRIES,
+            lastError: error.message 
+          },
+          timestamp: new Date().toISOString()
+        });
+      }
+      
+      // Wait before retry (exponential backoff)
+      await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+    }
   }
 });
 
